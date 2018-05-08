@@ -1,0 +1,18 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <div class="row">
+      <% tutorials.forEach(function(tutorial){ %>
+        <div class="col-md-4">
+          <%= tutorial.title %>
+          <a href="/course/<%= course._id %>/tutorials/<%= tutorial._id %>/edit">Edit</a>
+          <form class="" action="/course/<%= course._id %>/tutorials/<%= tutorial._id %>?_method=DELETE" method="POST">
+              <button type="submit">Delete</button>
+          </form>
+        </div>
+      <% }) %>
+    </div>
+  <a href="/course/<%= course._id %>/tutorial/new">Add a new tutorial</a>
+</div>
+
+<% include ../partials/footer %>

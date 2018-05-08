@@ -1,0 +1,6 @@
+node_modules/
+app.js
+public/assets/scripts
+public/assets/styles
+gulp/templates
+gulp/tasks/sprites.js

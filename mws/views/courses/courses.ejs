@@ -1,0 +1,43 @@
+<% include ../partials/header %>
+  <div class="container">
+    <div class="jumbotron">
+        <h1>All courses will be displayed here</h1>
+        <div class="">
+          <a href="/course/new"> <button class="btn btn-lg btn-primary">Add a new course</button> </a>
+        </div>
+    </div>
+    <div class="row">
+      <% courses.forEach(function(course){ %>
+        <div class="col-md-3 col-sm-6 col-xs-12 text-center">
+          <p><%= course.name %></p>
+          <p><img src="<%= course.image %>" alt="Image of HTML"></p>
+          <p><%= course.description %></p>
+          <p class="card-text"><%= course.author.username %></p>
+          <a class="btn btn-sm btn-default" href="/course/<%= course._id %>">Details</a>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+  <div class="container">
+    <div class="jumbotron">
+      <form class="" action="/courses/comment" method="POST">
+        <input type="text" name="comment[text]" placeholder="">
+        <input type="submit" value="Leave a Review">
+      </form>
+    </div>
+    <% comments.forEach(function(comment){ %>
+      <div class="jumbotron">
+        <strong><%= comment.author.username %></strong>
+        <p><%= comment.text %></p>
+        <div class="">
+          <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+            <a href="/courses/comment/<%= comment._id %>/edit">Edit</a>
+            <form class="" action="/courses/comment/<%= comment._id %>?_method=DELETE" method="POST">
+              <button type="submit">Delete</button>
+            </form>
+          <% } %>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+<% include ../partials/footer %>

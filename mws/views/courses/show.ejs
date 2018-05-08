@@ -1,0 +1,21 @@
+<% include ../partials/header %>
+  <div class="container">
+    <div class="card">
+      <img class="card-img-top" src="<%= course.image %>" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"><%= course.name %></h5>
+        <p class="card-text"><%= course.description %></p>
+        <p class="card-text"><%= course.author.username %></p>
+        <a href="/course/<%= course._id %>/tutorials">Tutorials</a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <% if(currentUser && course.author.id.equals(currentUser._id)){ %>
+    <a href="/course/<%= course._id %>/edit" class="btn btn-sm btn-warning">Edit</a>
+    <form class="" action="/course/<%= course._id %>?_method=DELETE" method="POST">
+      <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+    </form>
+    <% } %>
+  </div>
+<% include ../partials/footer %>

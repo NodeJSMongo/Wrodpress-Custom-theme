@@ -1,0 +1,13 @@
+<% include ../partials/header %>
+
+    <div class="container">
+      <form class="" action="/course/<%= course._id %>/tutorial" method="POST">
+        <input type="text" name="tutorial[title]" placeholder="Title">
+        <input type="text" name="tutorial[theme]" placeholder="Theme">
+        <input type="text" name="tutorial[excerpt]" placeholder="Summary">
+        <button type="submit">Submit</button>
+      </form>
+      <a href="/course/<%= course._id %>">Go back</a>
+    </div>
+
+<% include ../partials/footer %>

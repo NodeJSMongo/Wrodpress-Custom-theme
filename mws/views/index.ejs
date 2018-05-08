@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+  <link rel="shortcut icon" href="./assets/images/modernStack.png">
+  <meta name="keywords" content="Modern Web stack, Freelance Web developer, Toronto Web Master, Social Media Management, Logo Design, Branding">
+  <meta name="description" content="Support for startups and growing local businesses based in Toronto">
+  <title>Modern Web Stack</title>
+  <!--build:css assets/styles/styles.css -->
+  <link rel="stylesheet" href="./temp/styles/styles.css">
+  <!--endbuild-->
+
+  <!--build:js assets/scripts/vendor.js -->
+  <script src="./temp/scripts/vendor.js" type="text/javascript"></script>
+  <!--endbuild-->
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrapper">
+      <div class="site-header__menu-icon">
+          <div class="site-header__menu-icon__middle"></div>
+      </div>
+        <div class="site-header__menu-content">
+          <div class="site-header__btn-container">
+              <a href="#!" class="open-modal btn">ASK FOR A DEMO</a>
+          </div>
+        <nav class="primary-nav  primary-nav--pull-right">
+          <ul>
+            <li><a href="#home-beginning" id="home-beginning-link"><i class="fas fa-home fa-lg"></i></a></li>
+            <li><a href="#service" id="service-link">Services</a></li>
+            <li><a href="#tutorial" id="tutorial-link">Recent Tutorials</a></li>
+            <li><a href="/courses">All Courses</a></li>
+            <li><a href="https://www.modernwebstack.com/blog/">Blog</a></li>
+            <li><a href="#info" id="info-link">Contact</a></li>
+            <% if(!currentUser){ %>
+                <li><a href="/login">Login</a></li>
+                <li><a  href="/register">Register</a></li>
+            <% }else{ %>
+              <li><a href="/logout">logout</a></li>
+              <li ><a><%= currentUser.username %></a></li>
+            <% } %>
+          </ul>
+        </nav>
+        </div>
+    </div>
+    <div class="primary-nav">
+      <ul>
+        <li><a href="#home-beginning" id="home-beginning-link"></a><img src="./assets/images/modernStack.png" alt="logo_image" class="attention"></li>
+      </ul>
+    </div>
+  </header>
+  <div id="home-beginning"  class="large-hero triggers" data-matching-link="#home-beginning-link">
+    <picture>
+      <source srcset="./assets/images/mws-hero.png 1520w, ./assets/images/mws-hero-hi-dpi.png 3040w" media="(min-width:1080px)">
+        <source srcset="./assets/images/mws-hero_medium.png 1330w, ./assets/images/mws-hero_medium-hi-dpi.png 2660w" media="(min-width:800px)">
+          <source srcset="./assets/images/mws-hero_small.png 900w, ./assets/images/mws-hero_small-hi-dpi.png 1800w" media="(min-width:530px)">
+      <img srcset="./assets/images/mws-hero_smaller.png 500w, ./assets/images/mws-hero_smaller-hi-dpi.png 1000w" alt="Morder Web Stack display" class="large-hero__image">
+    </picture>
+
+    <div class ="large-hero__text-content">
+        <p class ="large-hero__title">Web Application Made Simple</p>
+        <p><a href="#" class="btn open-modal">Get Started Today</a></p>
+    </div>
+  </div>
+  <div class="triggers" id="service" data-matching-link="#service-link"> <!--Services link start -->
+
+    <div class="page-section__portfolio">
+      <div class="wrapper">
+        <div class="">
+          <p class="branding-front__text-title">Impressive platforms.</p>
+          <p class="underline">First impressions are everything when it comes to building your online platform. My websites provide exactly what consumers expect.</p>
+        </div>
+        <div class=" row ">
+          <div class="row__medium-3 page-section__portfolio-link">
+            <h5><i class="fab fa-android fa-10x"></i></h5>
+            <p><a href="./about.html#carouselExampleControls" class="btn">Mobile Apps</a></p>
+            <p>Let me make your first hybrid mobile app with facebook's React-Native.</p>
+          </div>
+          <div class="row__medium-3  page-section__portfolio-link">
+            <h5><i class="fas fa-cart-plus fa-10x"></i></h5>
+            <p><a href="./about.html#carouselExampleControls" class="btn">Ecommerce</a></p>
+            <p>Your Clients are diverting towards online. Don't let them go.</p>
+          </div>
+          <div class="row__medium-3  page-section__portfolio-link">
+            <h5><i class="fab fa-angellist fa-10x"></i></h5>
+            <p><a href="./about.html#carouselExampleControls" class="btn">Branding</a></p>
+            <p>It's all about promotion. More you promote, more you serve. </p>
+          </div>
+          <div class="row__medium-3 page-section__portfolio-link">
+            <h5><i class="fas fa-cloud fa-10x"></i></h5>
+            <p><a href="./about.html#carouselExampleControls" class="btn">Web Apps</a></p>
+            <p>Make your online profile accessible from mobile devices too.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="branding">
+        <div class="wrapper">
+            <div class="branding-front">
+              <div class="branding-front__text">
+                <div class="branding-front__text-title">
+                    <p>Branding made easier than ever.</p>
+                </div>
+                <div class="branding-front__text-subtitle">
+                    <p>Big companies will give you the same thing with more price. Get your branding covered by me in less price than ever.</p>
+                </div>
+                <p><a href="#" class ="open-modal btn">Learn more</a></p>
+              </div>
+            </div>
+            <div class="branding-back">
+                <img src="./assets/images/brandingLogo.png" alt="logo picture on phone" class="branding-item lazyload">
+            </div>
+        </div>
+      </div>
+      <div class="branding1">
+        <div class="wrapper">
+            <div class="branding1-front1">
+              <div class="branding1-front1__text">
+                <div class="branding1-front1__text-title">
+                    <h4>Social Media Expert</h4>
+                </div>
+                <div class="branding1-front1__text-subtitle">
+                    <p>Let me manage your Social Media Ads. Boost your business sell with expert social media ad managers.</p>
+                </div>
+                <p><a href="#" class ="open-modal btn">Learn more</a></p>
+              </div>
+            </div>
+            <div class="branding1-back1">
+              <img src="./assets/images/socialMedia.png" alt="Social Media Ads" class="branding-item lazyload">
+            </div>
+        </div>
+      </div>
+      <div class="branding triggers" id="service" data-matching-link="#service-link">
+        <div class="wrapper">
+            <div class="branding-front">
+              <div class="branding-front__text">
+                <div class="branding-front__text-title">
+                    <h4>Search Engine Optimization</h4>
+                </div>
+                <div class="branding-front__text-subtitle">
+                    <p>Key to get success in online marketing is SEO. Content marketing and affiliation. If you are struggeling in getting more traffic,
+                    don't lose hope. Experts are always there to help you.</p>
+                </div>
+                <p><a href="#" class ="open-modal btn">Learn more</a></p>
+              </div>
+            </div>
+            <div class="branding-back">
+                <img src="./assets/images/seo.png" alt="SEO picture" class="branding-item lazyload">
+            </div>
+        </div>
+      </div>
+  </div> <!--Services link end -->
+    <div class="branding1 triggers" id="tutorial"  data-matching-link="#tutorial-link"> <!--tutorial link start -->
+      <div class="wrapper">
+        <div class="page-section__react">
+            <div class="reactRoot">
+            </div>
+        </div>
+      </div>
+    </div><!--tutorial link end -->
+  <div class="info triggers" id="info" data-matching-link="#info-link">
+    <div class="row">
+      <div class="info-contact row__large-6">
+        <table class="contact-table">
+          <tr>
+            <td><i class="fa fa-phone fa-lg "></i></td>
+            <td>+1(647) 878-1553</td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-envelope fa-lg "></i></td>
+            <td>contact@modernwebstack.com</td>
+          </tr>
+          <tr>
+            <td><i class="fab fa-skype"></i></td>
+            <td>Skype me at mahmud.antor</td>
+          </tr>
+        </table>
+      </div>
+      <iframe class="info-map row__large-6"
+        src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJgTzd9SDM1IkRv-Me2cnIOoY&key=AIzaSyBd5h6tG0RJN8ikPrjHVJ-IwgDoLTav_QY"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+  <footer class="triggers site-footer">
+    <div>
+      <div class="site-footer__copyright ">
+          <p><a href="#" class="open-modal btn">Get in Touch</a></p>
+          <p class="site-footer__text">&copy;COPYRIGHT MODERNWEBSTACK 2018</p>
+      </div>
+        <span class="top_indicator"><a href="#home-beginning"><i class="fas fa-arrow-circle-up fa-5x"></i></a></span>
+        <img src="./assets/images/footer.png" alt="footer-picture" class="site-footer-image lazyload">
+  </footer>
+
+  <div class="modal_custom">
+    <div class="contact-form">
+      <img src="./assets/images/avtar.png" alt="avatar.png" class="contact-avatar">
+        <h4 class="contact-desc">Please,Tell me a bit more about your project.</h4>
+        <form class="" action="index.html" method="post">
+          <label for="[object Object]">Name</label>
+          <input type="text" name="" placeholder="John">
+          <label for="[object Object]">Email</label>
+          <input type="email" name="" placeholder="example@gmail.com">
+          <label for="[object Object]">Message</label>
+          <textarea name="name" rows="4" cols="40" placeholder="I want a personal website, with ..."></textarea>
+          <button type="submit" name="button">Send</button>
+        </form>
+    </div>
+    <div class="modal_custom__close">
+      X
+    </div>
+  </div>
+  <!--build:js assets/scripts/App.js -->
+  <script src="./temp/scripts/App.js"></script>
+  <!--endbuild -->
+  <!--build:js assets/scripts/index.js -->
+  <script src="./temp/scripts/index.js"></script>
+  <!--endbuild -->
+</body>
+</html>
